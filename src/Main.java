@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         display();
+
     }
 
     static double vacationSelection() {
@@ -13,34 +14,63 @@ public class Main {
 
         int choice = myScanner.nextInt();
         double price;
+        String destination;
 
 
         switch (choice) {
             case 1:
                 System.out.println("Hawaii");
-                price = 50;
+                price = 50.00;
                 return price;
             case 2:
                 System.out.println("Bahamas");
-                price = 40;
+                price = 40.00;
                 return price;
             case 3:
                 System.out.println("Cancun");
-                price = 60;
+                price = 60.00;
                 return price;
             case 4:
                 System.out.println("Las Vegas");
-                price = 35;
+                price = 35.00;
                 return price;
             case 5:
                 System.out.println("Europe");
-                price = 90;
+                price = 90.00;
                 return price;
             default:
                 System.out.println("Invalid Selection");
+                return vacationSelection();
         }
-        return 0;
+    }
 
+    static String destinationName(double price){
+        String destination;
+
+        if (price == 50){
+            destination = "Hawaii";
+            return destination;
+        }
+        else if (price == 40){
+            destination = "Bahamas";
+            return destination;
+        }
+        else if (price == 60){
+            destination = "Cancun";
+            return destination;
+        }
+        else if (price == 35){
+            destination = "Las Vegas";
+            return destination;
+        }
+        else if (price == 90){
+            destination = "Europe";
+            return destination;
+        }
+        else{
+            System.out.println("Invalid Selection");
+            return null;
+        }
     }
 
     static double airlineSelection() {
@@ -54,38 +84,98 @@ public class Main {
         switch (selector) {
             case 1:
                 System.out.println("Hawaii");
-                price2 = 50;
+                price2 = 50.00;
                 return price2;
             case 2:
                 System.out.println("Bahamas");
-                price2 = 40;
+                price2 = 40.00;
                 return price2;
             case 3:
                 System.out.println("Cancun");
-                price2 = 60;
+                price2 = 60.00;
                 return price2;
             case 4:
                 System.out.println("Las Vegas");
-                price2 = 35;
+                price2 = 35.00;
                 return price2;
             case 5:
                 System.out.println("Europe");
-                price2 = 90;
+                price2 = 90.00;
                 return price2;
             default:
                 System.out.println("Invalid Selection");
+                return airlineSelection();
         }
-        return 0;
     }
 
-    static void passengers(){
+    static String airlineName(double price2){
+        String airline;
 
+        if (price2 == 50){
+            airline = "Hawaii";
+            return airline;
+        }
+        else if (price2 == 40){
+            airline = "Bahamas";
+            return airline;
+        }
+        else if (price2 == 60){
+            airline = "Cancun";
+            return airline;
+        }
+        else if (price2 == 35){
+            airline = "Las Vegas";
+            return airline;
+        }
+        else if (price2 == 90){
+            airline = "Europe";
+            return airline;
+        }
+        else{
+            System.out.println("Invalid Selection");
+            return null;
+        }
+    }
+
+    static int passengers(){
+        Scanner passengerSelector = new Scanner(System.in);
+        System.out.println("How many passengers are traveling");
+        System.out.println("1. one passenger\n2. Two Passengers");
+
+        int passenger = passengerSelector.nextInt();
+
+        if (passenger == 1){
+            return passenger;
+        }
+        else if(passenger == 2){
+            return passenger;
+        }
+        else{
+            System.out.println("invalid Selection");
+            return 0;
+        }
+
+    }
+
+    static double tripTotal(double price, double price2, int passenger){
+        double total = (price + price2) * passenger;
+        return total;
     }
 
 
     static void display(){
-        System.out.println("destination: " + vacationSelection());
-        System.out.println("Airline: " + airlineSelection());
+        double destPrice = vacationSelection();
+        double airfare = airlineSelection();
+        String myDestination = destinationName(destPrice);
+        String myAirline = airlineName(airfare);
+        int passengerNum = passengers();
+
+        double myTotal = (destPrice + airfare) * passengerNum;
+
+        System.out.println("Your destination is: " + myDestination + " for $" + destPrice);
+        System.out.println("Your chosen Airline is: " + myAirline + " for $" + airfare);
+        System.out.println("The number of people flying is " + passengerNum);
+        System.out.println("Your total is: " + myTotal);
     }
 }
 
