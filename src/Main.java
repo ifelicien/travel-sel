@@ -82,23 +82,23 @@ public class Main {
 
         switch (selector) {
             case 1:
-                System.out.println("Hawaii");
+                System.out.println("US Airways");
                 price2 = 50.00;
                 return price2;
             case 2:
-                System.out.println("Bahamas");
+                System.out.println("Delta Airlines");
                 price2 = 40.00;
                 return price2;
             case 3:
-                System.out.println("Cancun");
+                System.out.println("Southwest Airlines");
                 price2 = 60.00;
                 return price2;
             case 4:
-                System.out.println("Las Vegas");
+                System.out.println("Continental Airlines");
                 price2 = 35.00;
                 return price2;
             case 5:
-                System.out.println("Europe");
+                System.out.println("American Airlines");
                 price2 = 90.00;
                 return price2;
             default:
@@ -111,27 +111,22 @@ public class Main {
         String airline;
 
         if (price2 == 50){
-            System.out.println("US Airways");
             airline = "US Airways";
             return airline;
         }
         else if (price2 == 40){
-            System.out.println("Delta Airlines");
             airline = "Delta Airlines";
             return airline;
         }
         else if (price2 == 60){
-            System.out.println("Southwest Airline");
             airline = "Southwest Airlines";
             return airline;
         }
         else if (price2 == 35){
-            System.out.println("Continental Airline");
             airline = "Continental Airlines";
             return airline;
         }
         else if (price2 == 90){
-            System.out.println("American Airlines");
             airline = "American Airlines";
             return airline;
         }
