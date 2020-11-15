@@ -14,7 +14,6 @@ public class Main {
 
         int choice = myScanner.nextInt();
         double price;
-        String destination;
 
 
         switch (choice) {
@@ -112,23 +111,28 @@ public class Main {
         String airline;
 
         if (price2 == 50){
-            airline = "Hawaii";
+            System.out.println("US Airways");
+            airline = "US Airways";
             return airline;
         }
         else if (price2 == 40){
-            airline = "Bahamas";
+            System.out.println("Delta Airlines");
+            airline = "Delta Airlines";
             return airline;
         }
         else if (price2 == 60){
-            airline = "Cancun";
+            System.out.println("Southwest Airline");
+            airline = "Southwest Airlines";
             return airline;
         }
         else if (price2 == 35){
-            airline = "Las Vegas";
+            System.out.println("Continental Airline");
+            airline = "Continental Airlines";
             return airline;
         }
         else if (price2 == 90){
-            airline = "Europe";
+            System.out.println("American Airlines");
+            airline = "American Airlines";
             return airline;
         }
         else{
